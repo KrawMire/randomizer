@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Electron Application</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="input-area">
+            <h1 id="title">Randomizer</h1>
+            <input type="text" placeholder="Input max random number..." name="max-number" id="max-number">
+            <button id="random-button" onclick="onGetRandom()">
+                Get radom number
+            </button>
+            <div id="random-area">
+                <h1>Numbers</h1>
+                <div id="numbers-area">
+                    <div class="random-number">
+                        12
+                    </div>
+                    <div class="random-number">
+                        12
+                    </div>
+                    <div class="random-number">
+                        123
+                    </div>
+                </div>
+                <div id="current-number-area">
+                    <span id="current-number">
+                        12
+                    </span>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <!-- Scripts load -->
+    <script src="./random.js" type="text/javascript"></script>
+</body>
+</html>
