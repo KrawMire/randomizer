@@ -41,7 +41,7 @@ function findRandomNumber(maxNumber) {
 }
 
 function getRandomNumber(maxNumber) {
-    return Math.floor(Math.random() * maxNumber);
+    return Math.round(Math.random() * maxNumber);
 }
 
 function getMaxNumberValue() {
