@@ -6,14 +6,7 @@
 }
 
 body {
-    background-color: #e7e7e7;
     font-family: 'Roboto';
-}
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
 }
 
 #title {
@@ -25,13 +18,7 @@ body {
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 60vh;
-    background-color: #FFFFFF;
-    padding: 20px;
-    transition: .4;
-    border-radius: 20px;
-    box-shadow: 0px 5px 10px #787878;
+    margin: 50px auto 0 auto;
 }
 
 #max-number {
@@ -39,6 +26,7 @@ body {
     border-radius: 10px;
     border: 2px solid #787878;
     padding: 7px;
+    margin-top: 20px;
 }
 
 #max-number:focus {
@@ -55,6 +43,7 @@ body {
     color: #FFFFFF;
     box-shadow: 0px 5px #999999;
     font-weight: 600;
+    margin-top: 20px;
 }
 
 #random-button:hover {
@@ -72,9 +61,13 @@ body {
     flex-direction: row;
     overflow-x: auto;
     padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 3px #787878;
+    margin-top: 20px;
 }
 
 #current-number-area {
+    margin: 10px;
     text-align: center;
 }
 
@@ -83,8 +76,7 @@ body {
     padding: 10px;
     border-radius: 50%;
     color: #FFFFFF;
-    box-shadow: 0px 5px 10px #787878;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 #current-number {
@@ -93,19 +85,25 @@ body {
     padding: 20px;
     border-radius: 50%;
     color: #FFFFFF;
-    box-shadow: 0px 5px 10px #787878;
+    transition: .4;
 }
 
 #random-area {
-    height: 50%;
+    height: 300px;
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
-    border: 1px solid #9e9e9e;
+    justify-content: space-around;
+    box-shadow: 0px 5px 15px #787878;
     border-radius: 30px;
     padding: 30px;
+    margin-top: 20px;
 }
 
 #numbers-area::-webkit-scrollbar {
     display: none;
+}
+
+.clear-res {
+    cursor: pointer;
+    color: #7cbe6b;
 }
