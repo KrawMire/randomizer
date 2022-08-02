@@ -4,9 +4,11 @@ let firstPassed = false;
 const inputForm = document.getElementById('input-area');
 const passedNumbersArea = document.getElementById('numbers-area');
 const currentNumberArea = document.getElementById('current-number-area');
-let currentNumberSpan = document.getElementById('current-number')
+let numbersArray = new Array();
+let currentNumberSpan = document.getElementById('current-number');
 
-function onClearResults() {
+
+function onClearResults() {n
     while(passedNumbersArea.firstChild) {
         passedNumbersArea.removeChild(passedNumbersArea.firstChild);
     }
@@ -17,6 +19,7 @@ function onClearResults() {
     }
 
     firstPassed = false;
+    numbersArray = [];
 }
 
 function onGetRandom() {
@@ -27,21 +30,36 @@ function onGetRandom() {
         return;
     }
     
-    const randomNumber = findRandomNumber(maxNumber);
+    const randomNumber = getRandomNumber(maxNumber);
     
-    displayNumber(randomNumber);
-    addPassedNumber(randomNumber);
-    scrollPassedNumbersToEnd();
-
-    firstPassed = true;
-}
-
-function findRandomNumber(maxNumber) {
-    return getRandomNumber(maxNumber);
+    if (randomNumber) {
+        displayNumber(randomNumber);
+        addPassedNumber(randomNumber);
+        scrollPassedNumbersToEnd();
+    
+        firstPassed = true;
+        numbersArray.push(randomNumber);   
+    } else {
+        alert('All numbers passed');
+    }
 }
 
 function getRandomNumber(maxNumber) {
-    return Math.round(Math.random() * maxNumber);
+    const random = Math.round(Math.random() * maxNumber);
+
+    if (numbersArray.find(num => num === random)) {
+        let allPassed = true;
+
+        for (let i = 0; i <= maxNumber; i++) {
+            if (!numbersArray.find(num => num === i)) {
+                allPassed = false;
+            }
+        }
+        
+        return allPassed ? null : getRandomNumber(maxNumber);
+    }
+
+    return random;
 }
 
 function getMaxNumberValue() {
