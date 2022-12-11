@@ -4,7 +4,8 @@
   "description": "",
   "author": "KrawMire",
   "license": "ISC",
-  "main": "index.js",
+  "main": "index.ts",
+  "homepage": ".",
   "scripts": {
     "start-electron": "react-scripts build && electron .",
     "start-react": "react-scripts start",
