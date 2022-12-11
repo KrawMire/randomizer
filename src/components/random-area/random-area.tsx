@@ -2,8 +2,13 @@ import ClearResult from './components/clear-result-button';
 import CurrentNumber from './components/current-number';
 import NumbersArea from './components/numbers-area';
 
+type RandomAreaProps = {
+  clear: () => void;
+  passedNumbers: Array<number>;
+  currentNumber: number | null;
+}
 
-function RandomArea(props) {
+const RandomArea = (props: RandomAreaProps) => {
   return (
     <div id="random-area">
       <h1>Numbers</h1>

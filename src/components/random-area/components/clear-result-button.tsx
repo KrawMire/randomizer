@@ -1,4 +1,8 @@
-function ClearResultButton(props) {
+type ClearResultButtonProps = {
+  clear: () => void;
+}
+
+const ClearResultButton = (props: ClearResultButtonProps) => {
   return (
     <div>
       <p
