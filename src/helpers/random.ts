@@ -1,9 +1,3 @@
-const getRandomNumber = (maxNumber: number) : number => {
-  const num = Math.round(Math.random() * maxNumber);
-
-  return num;
-}
-
-export {
-  getRandomNumber
+export const getRandomNumber = (maxNumber: number) : number => {
+  return Math.round(Math.random() * maxNumber);
 }
