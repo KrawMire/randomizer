@@ -1,20 +1,15 @@
 import { useState } from 'react';
 
-import GetNumberButton from './components/get-number-button';
-import MaxNumberInput from './components/max-number-input';
-import RandomArea from './components/random-area/random-area';
-import { getRandomNumber } from './helpers/random';
+import GetNumberButton from 'src/components/get-number-button';
+import MaxNumberInput from 'src/components/max-number-input';
+import RandomArea from 'src/components/random-area/random-area';
+import { getRandomNumber } from 'src/helpers/random';
 
 
 const App = () => {
   const [maxNumber, setMaxNumber] = useState<number | null>(null);
-  const [passedNumbers, setPassetNumbers] = useState<Array<number>>([]);
+  const [passedNumbers, setPassedNumbers] = useState<Array<number>>([]);
   const [currentNumber, setCurrentNumber] = useState<number | null>(null);
-
-
-  const handleChangeLocale = () => {
-
-  }
 
   const handleGetRandomNumber = () => {
     if (!maxNumber) {
@@ -26,12 +21,12 @@ const App = () => {
 
     if (randomNumber) {
       setCurrentNumber(randomNumber);
-      setPassetNumbers([randomNumber, ...passedNumbers]);
+      setPassedNumbers([randomNumber, ...passedNumbers]);
     }
   };
 
   const handleClearResult = () => {
-    setPassetNumbers([]);
+    setPassedNumbers([]);
     setCurrentNumber(null);
   }
 
